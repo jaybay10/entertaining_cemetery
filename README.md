@@ -15,19 +15,10 @@ The Family Budget App is a web application designed to help families manage thei
     * Dashboard: Overview of budget categories, recent transactions, and savings progress.
     * Transaction History: Detailed list of income and expenses.
     * User Profile: Personal settings and preferences.
-3. .NET Backend:
-  * The backend is developed using .NET, handling data storage, authentication, and business logic.
-  * Features include:
-    * API Endpoints: Exposes endpoints for CRUD operations on transactions, categories, and user profiles.
-    * Authentication: Secure user login and role-based authorization.
-    * Database Integration: Connects to a database (e.g., SQL Server) to store user data.
-4. Budget Categories:
-  * Admins can create and manage budget categories (e.g., groceries, utilities, entertainment).
-  * Users can allocate funds to specific categories.
-5. Transaction Management:
+3. Transaction Management:
   * Users can add income or expenses with details such as date, amount, and category.
   * Transactions are recorded and displayed in the transaction history.
-6. Savings Goals:
+4. Savings Goals:
   * Users can set savings goals (e.g., vacation fund, emergency fund).
   * The app tracks progress toward these goals.
 
