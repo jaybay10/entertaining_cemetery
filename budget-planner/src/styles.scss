@@ -18,6 +18,7 @@
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
+    --fs-100: 0.75rem
     
     /* font-families */
     --ff-serif: "Bellefair", serif;
@@ -85,15 +86,14 @@ p {
 body {
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
-    color: hsl( var(--clr-white) );
-    background-color: hsl( var(--clr-dark) );
+    color: hsl( var(--clr-dark) );
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     line-height: 1.5;
     min-height: 100vh;
-    
-    display: grid;
-    grid-template-rows: min-content 1fr;
-    
-    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* make images easier to work with */
@@ -133,10 +133,57 @@ select {
     margin-top: var(--flow-space, 1rem);
 }
 
-.container {
-    padding-inline: 2em;
-    margin-inline: auto;
-    max-width: 80rem;
+.login-container-form {
+   background-color: hsl( var(--clr-white) );
+   border-radius: 30px;
+   box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.35);
+   position: relative;
+   overflow: hidden;
+   width: 768px;
+   max-width: 100%;
+   min-height: 480px;
+}
+
+.login-container-form p{
+    font-size: var(--fs-200);
+    line-height: 20px;
+    margin: 20px 0px;
+}
+
+.form-container span{
+    font-size: 12px;
+}
+
+.form-container a{
+    color: hsl( var(--clr-light));
+    font-size: var(--fs-200);
+    text-decoration: none;
+    margin: 15px 0px 10px;
+}
+
+.login-container-form form{
+    background-color: hsl( var(--clr-white) );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.form-container input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: var(--fs-200);
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.toggle-container button.hidden{
+    background-color: transparent;
 }
 
 .sr-only {
@@ -182,9 +229,9 @@ select {
 .ff-sans-cond { font-family: var(--ff-sans-cond); } 
 .ff-sans-normal { font-family: var(--ff-sans-normal); } 
 
-.letter-spacing-1 { letter-spacing: 4.75px; } 
-.letter-spacing-2 { letter-spacing: 2.7px; } 
-.letter-spacing-3 { letter-spacing: 2.35px; } 
+.letter-spacing-1 { letter-spacing: 0.5px; } 
+.letter-spacing-2 { letter-spacing: 1px; } 
+.letter-spacing-3 { letter-spacing: 1.5px; } 
 
 .uppercase { text-transform: uppercase; }
 
@@ -223,15 +270,15 @@ select {
 /* ------------------- */
 
 .large-button {
-    font-size: 2rem;
-    position: relative;
-    z-index: 1;
-    display: inline-grid;
-    place-items: center;
-    padding: 0 2em;
-    border-radius: 50%;
-    aspect-ratio: 1;
-    text-decoration: none;
+    background-color: #512dab;
+    color: hsl( var(--clr-white) );
+    font-size: var(--fs-400);
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 .large-button::after {
