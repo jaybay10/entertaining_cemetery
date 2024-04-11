@@ -26,27 +26,6 @@
     --ff-sans-normal: "Barlow", sans-serif;
 }
 
-@media (min-width: 35em) {
-    :root {
-        --fs-800: 5rem;
-        --fs-700: 2.5rem;
-        --fs-600: 1.5rem;
-        --fs-500: 1.25rem;
-        --fs-400: 1rem;
-    }
-}
-
-@media (min-width: 45em) {
-    :root {
-        /* font-sizes */
-        --fs-800: 6.25rem;
-        --fs-700: 3.5rem;
-        --fs-600: 2rem;
-        --fs-500: 1.75rem;
-        --fs-400: 1.125rem;
-    }
-}
-
 /* ------------------- */
 /* Reset               */
 /* ------------------- */
@@ -66,9 +45,7 @@ h2,
 h3,
 h4,
 h5,
-p,
-figure,
-picture {
+p {
     margin: 0; 
 }
 
@@ -115,104 +92,6 @@ select {
 /* ------------------- */
 /* general Display-layout classes should be set here.*/
 
-.flex {
-    display: flex;
-    gap: var(--gap, 1rem);
-}
-
-.grid {
-    display: grid;
-    gap: var(--gap, 1rem);
-}
-
-.d-block {
-    display: block;
-}
-
-.flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-space, 1rem);
-}
-
-.login-container-form {
-   background-color: hsl( var(--clr-white) );
-   border-radius: 30px;
-   box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.35);
-   position: relative;
-   overflow: hidden;
-   width: 768px;
-   max-width: 100%;
-   min-height: 480px;
-}
-
-.login-container-form p{
-    font-size: var(--fs-200);
-    line-height: 20px;
-    margin: 20px 0px;
-}
-
-.form-container span{
-    font-size: 12px;
-}
-
-.form-container a{
-    color: hsl( var(--clr-light));
-    font-size: var(--fs-200);
-    text-decoration: none;
-    margin: 15px 0px 10px;
-}
-
-.login-container-form form{
-    background-color: hsl( var(--clr-white) );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    height: 100%;
-}
-
-.form-container input{
-    background-color: #eee;
-    border: none;
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: var(--fs-200);
-    border-radius: 8px;
-    width: 100%;
-    outline: none;
-}
-
-.toggle-container button.hidden{
-    background-color: transparent;
-}
-
-.sr-only {
-  position: absolute; 
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px; 
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
-}
-
-.skip-to-content {
-    position: absolute;
-    z-index: 9999;
-    background: hsl( var(--clr-white) );
-    color: hsl( var(--clr-dark) ); 
-    padding: .5em 1em;
-    margin-inline: auto;
-    transform: translateY(-100%);
-    transition: transform 250ms ease-in;
-}
-
-.skip-to-content:focus {
-    transform: translateY(0);
-}
-
 /* colors */
 
 .bg-dark { background-color: hsl( var(--clr-dark) );}
@@ -251,50 +130,20 @@ select {
     line-height: 1.1;
 }
 
-.numbered-title {
-    font-family: var(--ff-sans-cond);
-    font-size: var(--fs-500);
-    text-transform: uppercase;
-    letter-spacing: 4.72px; 
-}
-
-.numbered-title span {
-    margin-right: .5em;
-    font-weight: 700;
-    color: hsl( var(--clr-white) / .25);
-}
-
-
 /* ------------------- */
 /* Compontents         */
 /* ------------------- */
 
-.large-button {
-    background-color: #512dab;
-    color: hsl( var(--clr-white) );
-    font-size: var(--fs-400);
+.custom--button {
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
     padding: 10px 45px;
     border: 1px solid transparent;
     border-radius: 8px;
     font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
-}
-
-.large-button::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: hsl( var(--clr-white) / .1);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 500ms linear, transform 750ms ease-in-out;
-}
- 
-.large-button:hover::after,
-.large-button:focus::after {
-    opacity: 1;
-    transform: scale(1.5);
 }
