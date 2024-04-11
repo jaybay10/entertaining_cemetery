@@ -18,32 +18,12 @@
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
+    --fs-100: 0.75rem
     
     /* font-families */
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
-}
-
-@media (min-width: 35em) {
-    :root {
-        --fs-800: 5rem;
-        --fs-700: 2.5rem;
-        --fs-600: 1.5rem;
-        --fs-500: 1.25rem;
-        --fs-400: 1rem;
-    }
-}
-
-@media (min-width: 45em) {
-    :root {
-        /* font-sizes */
-        --fs-800: 6.25rem;
-        --fs-700: 3.5rem;
-        --fs-600: 2rem;
-        --fs-500: 1.75rem;
-        --fs-400: 1.125rem;
-    }
 }
 
 /* ------------------- */
@@ -65,9 +45,7 @@ h2,
 h3,
 h4,
 h5,
-p,
-figure,
-picture {
+p {
     margin: 0; 
 }
 
@@ -85,15 +63,14 @@ p {
 body {
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
-    color: hsl( var(--clr-white) );
-    background-color: hsl( var(--clr-dark) );
+    color: hsl( var(--clr-dark) );
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     line-height: 1.5;
     min-height: 100vh;
-    
-    display: grid;
-    grid-template-rows: min-content 1fr;
-    
-    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* make images easier to work with */
@@ -115,57 +92,6 @@ select {
 /* ------------------- */
 /* general Display-layout classes should be set here.*/
 
-.flex {
-    display: flex;
-    gap: var(--gap, 1rem);
-}
-
-.grid {
-    display: grid;
-    gap: var(--gap, 1rem);
-}
-
-.d-block {
-    display: block;
-}
-
-.flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-space, 1rem);
-}
-
-.container {
-    padding-inline: 2em;
-    margin-inline: auto;
-    max-width: 80rem;
-}
-
-.sr-only {
-  position: absolute; 
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px; 
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
-}
-
-.skip-to-content {
-    position: absolute;
-    z-index: 9999;
-    background: hsl( var(--clr-white) );
-    color: hsl( var(--clr-dark) ); 
-    padding: .5em 1em;
-    margin-inline: auto;
-    transform: translateY(-100%);
-    transition: transform 250ms ease-in;
-}
-
-.skip-to-content:focus {
-    transform: translateY(0);
-}
-
 /* colors */
 
 .bg-dark { background-color: hsl( var(--clr-dark) );}
@@ -182,9 +108,9 @@ select {
 .ff-sans-cond { font-family: var(--ff-sans-cond); } 
 .ff-sans-normal { font-family: var(--ff-sans-normal); } 
 
-.letter-spacing-1 { letter-spacing: 4.75px; } 
-.letter-spacing-2 { letter-spacing: 2.7px; } 
-.letter-spacing-3 { letter-spacing: 2.35px; } 
+.letter-spacing-1 { letter-spacing: 0.5px; } 
+.letter-spacing-2 { letter-spacing: 1px; } 
+.letter-spacing-3 { letter-spacing: 1.5px; } 
 
 .uppercase { text-transform: uppercase; }
 
@@ -204,50 +130,20 @@ select {
     line-height: 1.1;
 }
 
-.numbered-title {
-    font-family: var(--ff-sans-cond);
-    font-size: var(--fs-500);
-    text-transform: uppercase;
-    letter-spacing: 4.72px; 
-}
-
-.numbered-title span {
-    margin-right: .5em;
-    font-weight: 700;
-    color: hsl( var(--clr-white) / .25);
-}
-
-
 /* ------------------- */
 /* Compontents         */
 /* ------------------- */
 
-.large-button {
-    font-size: 2rem;
-    position: relative;
-    z-index: 1;
-    display: inline-grid;
-    place-items: center;
-    padding: 0 2em;
-    border-radius: 50%;
-    aspect-ratio: 1;
-    text-decoration: none;
-}
-
-.large-button::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: hsl( var(--clr-white) / .1);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 500ms linear, transform 750ms ease-in-out;
-}
- 
-.large-button:hover::after,
-.large-button:focus::after {
-    opacity: 1;
-    transform: scale(1.5);
+.custom-button {
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
 }
