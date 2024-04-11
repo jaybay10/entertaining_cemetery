@@ -46,6 +46,16 @@
     border-color: #fff;
 }
 
+.container button.hidden:hover{
+    background-color: #EEEEEE;
+    border-color: #fff;
+    color: #31363F;
+    font-weight: 600;
+    transition: 1.5s ease; 
+   
+}
+
+
 .container form{
     background-color: #fff;
     display: flex;
