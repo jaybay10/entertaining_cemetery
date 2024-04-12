@@ -32,6 +32,19 @@ export class LoginFormComponent implements OnInit{
     }); 
   }
 
+  signUpDetails(): void {   
+    this.container.nativeElement.classList.add('active');
+    this.loginForm.get('email').setValue('');
+    this.loginForm.get('password').setValue('');
+  }
+
+  loginDetails(): void {
+    this.container.nativeElement.classList.remove('active');
+    this.signUpForm.get('username').setValue('');
+    this.signUpForm.get('email').setValue('');
+    this.signUpForm.get('password').setValue('');
+  }
+
   login(){
     if(this.loginForm.valid){
       console.log("Login info ---> ", this.loginForm.value);
@@ -86,18 +99,5 @@ export class LoginFormComponent implements OnInit{
     } else {
       return false;
     }
-  }
-
-  signUpDetails(): void {   
-    this.container.nativeElement.classList.add('active');
-    this.loginForm.get('email').setValue('');
-    this.loginForm.get('password').setValue('');
-  }
-
-  loginDetails(): void {
-    this.container.nativeElement.classList.remove('active');
-    this.signUpForm.get('username').setValue('');
-    this.signUpForm.get('email').setValue('');
-    this.signUpForm.get('password').setValue('');
-  }
+  } 
 }
