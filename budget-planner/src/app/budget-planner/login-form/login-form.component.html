@@ -1,22 +1,37 @@
 <div class="container" id="container" #container>
     <div class="form-container sign-up" #signUp>
-        <form>
+        <form [formGroup]="signUpForm" (ngSubmit)="signup()">
             <h1>Create Account</h1>
             <span>or use your email for registeration</span>
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button>Sign Up</button>
+            <input type="text" formControlName="username" placeholder="Name">
+            <div *ngIf="isUsernameSignUpInvalid()" [ngStyle]="{color: 'red', 'font-size': '12px'}">
+                Userrname length should be greater than 3.
+            </div>
+            <input type="email" formControlName="email" placeholder="Email">
+            <div *ngIf="isEmailSignUpInvalid()" [ngStyle]="{color: 'red', 'font-size': '12px'}">
+                Invalid email format.
+            </div>
+            <input type="password" formControlName="password" placeholder="Password">
+            <div *ngIf="isPasswordSignUpInvalid()" [ngStyle]="{color: 'red', 'font-size': '12px'}">
+                Password length should be greater than 6.
+            </div>
+            <button type="submit">Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in" #signIn>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
             <h1>Sign In</h1>
             <span>or use your email password</span>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
+            <input type="email" formControlName="email" placeholder="Email">
+            <div *ngIf="isEmailLoginInvalid()" [ngStyle]="{color: 'red', 'font-size': '12px'}">
+                Invalid email format.
+            </div>
+            <input type="password" formControlName="password" placeholder="Password">
+            <div *ngIf="isPasswordLoginInvalid()" [ngStyle]="{color: 'red', 'font-size': '12px'}">
+                Password length should be greater than 6.
+            </div>
             <a href="#">Forget Your Password?</a>
-            <button>Sign In</button>
+            <button type="submit" [disabled]="!loginForm.dirty">Sign In</button>
         </form>
     </div>
     <div class="toggle-container">
@@ -24,12 +39,12 @@
             <div class="toggle-panel toggle-left">
                 <h1>Welcome Back!</h1>
                 <p>Enter your personal details to use all of site features</p>
-                <button class="hidden" id="login" (click)="SignIn()">Sign In</button>
+                <button class="hidden" id="login" (click)="loginDetails()">Sign In</button>
             </div>
             <div class="toggle-panel toggle-right">
                 <h1>Hello, Friend!</h1>
                 <p>Register with your personal details to use all of site features</p>
-                <button class="hidden" id="register" (click)="SignUp()">Sign Up</button>
+                <button class="hidden" id="register" (click)="signUpDetails()">Sign Up</button>
             </div>
         </div>
     </div>
