@@ -90,11 +90,11 @@ export class LoginFormComponent implements OnInit{
 
   signUpDetails(): void {   
     this.container.nativeElement.classList.add('active');
- 
+    this.loginForm.reset();
   }
 
   loginDetails(): void {
     this.container.nativeElement.classList.remove('active')
-    //this.signUpForm.reset();
+    this.signUpForm.reset();
   }
 }
